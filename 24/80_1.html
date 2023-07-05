@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function(){
+      $('#src').on('keyup',function(){
+        const count = $('#src').val().length;
+        //10글자까지만 입력 가능
+        // if(count>9)
+        // $('#src').attr('disabled','1');
+
+        //네글자 입력하면 비활성화시키기
+        // if(count>=4){
+        // $('#src').attr('readonly',true);
+        // }
+
+        //다섯글자 입력하면 지워버리자
+        //abcde -> abcd
+        console.log('abcde'.substr(0,4))
+        if(count>4){
+          const str = $('#src').val().substr(0,4);
+          $('#src').val(str);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="text" id="src">
+  <span id="message"></span>
+</body>
+</html>

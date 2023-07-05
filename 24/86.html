@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>AJAX 보내기</title>
+  <script>
+    // MVC 방식으로 요청(request)을 보내면 프론트의 모든 작업은 중지        
+
+    $.ajax({
+      url: 'https://sample.bmaster.kro.kr/contacts',
+      method : 'get',
+      success:function(){
+        console.log('서버 응답');
+      }
+    })
+  </script>
+</head>
+<body>
+
+</body>
+</html>

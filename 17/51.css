@@ -1,0 +1,22 @@
+/*
+  전체 넓이 1000px, 가운데 정렬
+  헤더, nav, 푸터 높이 50px, 각각 색깔 지정
+  aside 높이 200, 넓이 100 각각 색 지정하고 section 좌우에 배치
+  section 남은 넓이, 최저 높이 600
+
+  작성한 css를 html에 링크
+*/
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+* { font-family: 'Nanum Gothic', sans-serif; }
+/* @import: css파일에서 다른 css 파일을 가져오는것*/
+ 
+#page{width: 1000px; margin: 0 auto;}
+header, nav, footer { height: 50px; width: 800px;}
+header{background-color: bisque;}
+nav{background-color: aquamarine;}
+footer{background-color: blueviolet;}
+aside{height: 200px; width: 100px;}
+aside:first-of-type{background-color: pink; height: 600px;}
+aside:last-of-type{background-color: blue; height: 600px;}
+section{width: 600px;height: 600px; background-color: #eee}
+main{display: flex;}

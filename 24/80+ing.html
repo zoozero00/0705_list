@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    #btn {
+      background-color: skyblue;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#src').on('keyup', function(){
+        const cnt = $('#src').val().length;
+        if(cnt>0&&cnt<10)
+        $('#cnt').text(`${cnt} 글자 입력`);
+        else if(cnt>=10)
+        $('#cnt').text(`10 글자까지 입력할 수 있습니다`).attr('disabled'); 
+        else
+        $('#cnt').text('입력 대기중...');
+      })
+    })
+  </script>
+</head>
+<body>  
+  <label for="src">입력:</label><br>
+  <input type="text" id="src">  <br>
+  <span id="cnt">입력 대기중...</span>  <br>
+  <button id="btn">확인</button>
+</body>
+</html>

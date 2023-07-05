@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  * { padding: 0; margin: 0;}
+  ul { list-style: none; overflow: hidden;}
+    li { float: left; width: 200px; background: blueviolet;
+      height: 35px; text-align: center; line-height: 35px;        
+      }      
+      a { color: white; text-decoration: none; display: block;}
+      li:hover {background-color: aqua;} 
+        body {display: flex; justify-content: center;}
+    #page { width: 800px; }
+    header, nav, footer {height: 40px; display : flex; 
+      justify-content: center; align-items : center; border: 1px solid red
+    }
+    aside { width: 100px; height: 600px; float: left;
+       background-color: aqua;}
+    section{width: 600px; height: 600px; float: left; 
+      background-color: yellowgreen;}
+    main {overflow: hidden;}
+  </style>
+</head>
+<body>
+  <div>
+    <header><b>인천일보 아카데미</b></header>
+    <nav>
+      <ul>
+        <li><a href="https://www.icia.co.kr/about/introduce">ABOUT US</a></li>
+        <li><a href="https://www.icia.co.kr/course/list/">COURSES</a></li>
+        <li><a href="https://www.icia.co.kr/community/board/list/0">COMMUNITY</a></li>
+        <li><a href="https://www.icia.co.kr/movie/list/">VIDEO</a></li>
+      </ul>
+    </nav>
+    <main>
+      <aside>광고</aside>
+      <section>본문</section>
+      <aside>광고</aside>
+    </main>
+    <footer>꼬릿말</footer>
+  </div>
+</body>
+</html>

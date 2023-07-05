@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination</title>
+  <script>
+    // 이전으로 1 2 3 4 5 다음으로  표현
+    // 이전으로 , 다음으로 : 0 또는 값
+    // start: 이전으로 + 1
+    // end는 prev+5, next는 end+1
+    // end는 prev+5 -> contOgPage와 비교
+    // next는 end+1 -> end가 contOgPage보다 같거나 크다면 0
+     
+    // page       prev      start       end       next
+    // 1~5        0*5 0        1         5         6
+    // 6~10       5*5 5        6         10        11
+    // 11, 12     10*5 10       11       15->12    16->0
+
+    const countOfPage = 12;
+    const 한화면당페이지수 = 5;
+    for (let page=1; page<=countOfPage; page++){
+      const prev = Math.floor((page-1)/한화면당페이지수)*한화면당페이지수;
+      let start = prev+1;
+      let next = end+1;
+
+      // 만약 countOfPage가 15라고 하자
+      // end가 15가 됐을 때 end=countOfPage에 의해 15를 15로 바꾼다
+      // 15를 15로 바꾸는 이유?
+      // countOfPage와 end가 같은 경우에 end는 변경할 필요가 없지만
+      // next는 0으로 바꿔줘야 한다
+
+      if(end>=countOfPage){
+        end=countOfPage;
+        next=0;
+      }
+      console.log(`${page} : ${prev}${start}${end}${next}`);
+    }    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

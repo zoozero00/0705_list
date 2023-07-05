@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function(){
+      const a = document.querySelector('#src').innerHTML;
+      const b = $('#src').text();
+      console.log(`${a} ${b}`);
+    $('#dest').text();
+    })
+  </script>
+</head>
+<body>  
+  <!-- jQuery로 #src를 읽어서 #dest로 출력하시오 -->
+  <p id="src">나는 jQuery</p>
+  <p id="dest"></p>
+
+</body>
+</html>

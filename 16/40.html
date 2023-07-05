@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    for : for, of, in, forEach
+    jQuery : $.each...
+  -->
+
+  <script>
+    const ar =[1,2,3];
+
+    for(let i=0; i<31; i++){ }
+
+    //of 반복문
+    for(const a of ar){
+      console.log(a);
+    }
+
+    
+
+    //객체에 접근하는 방법
+    const obj = {
+      name:'홍길동',
+      age:20
+    }
+
+    console.log(obj.name);
+    console.log(obj['name']);
+
+    const name = prompt ('name 또는 age 입력');
+    console.log(obj[name]);
+
+    // 객체의 필드명을 반복 : a는 차례대로 name, age
+    for(const a in obj){
+      console.log(obj[a]);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>배열다루기</title>
+</head>
+<body>
+  <script>
+    'use strict'
+    const ar = [];
+    const ob = {};
+    console.log(typeof ar);
+    console.log(typeof br);
+
+    // 배열에 값 추가하기
+    ar.push(5);
+    ar.push(10);
+    ar.push(15);
+
+    console.log(typeof ar);
+
+    ar[1]++;
+    // 기본작업 : Create Read Update Delete
+
+    // ar.splice(인덱스, 크기)
+    ar.splice(0, 1);
+    console.log(ar);
+  </script>
+  
+</body>
+</html>

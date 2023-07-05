@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      color: red !important; /* 무한대 우선 순위 */
+
+    }
+    #selector {}                     /*우선순위 100*/
+    div#selector {}                  /*우선순위 101*/
+    div#selector li {}               /*우선순위 102*/
+    div#selector>ul>li {}            /*우선순위 103*/
+    div#selector .class li {}        /*우선순위 112*/
+  </style>
+</head>
+<body>
+  <div id="selector">
+    <h1>선택자 우선 순위</h1>
+    <ul>
+      <li>!inportant</li><!-- -->
+      <li>인라인 스타일 : 1000</li>
+      <li>아이디 선택자 : 100</li>
+      <li>클래스 선택자 : 10</li>
+      <li>태그 선택자 : 1</li>
+    </ul>
+  </div>
+</body>
+</html>

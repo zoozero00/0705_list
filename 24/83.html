@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <from>
+    이름 : <input type="text" name="name" value="spring">
+    나이 : <input type="text" name="age" value="20">
+    <button>보내기</button>
+  </from>
+  <!--
+    MVC : 백과 프론트를 함꼐 만들어 ->  둘다 자바를 쓰자
+          자바끼리는 통역이 불필요
+    REST : 백따로 프론트따로 -> 통역이 필요
+
+    폼을 서버로 전송하는 형식을 url encoded라고 한다
+      -> ?name=spring&age=20      
+  -->
+  <!--
+    폼을 submit한다
+     -> 전통적인 인터넷의 일처리 방식
+     -> 서버에서 처리하고 결과를 보내준다
+     -> 프론트에서 화면이 새로 그려진다
+        submit - urlencoded - "MVC"(프론트와 백은 같은 회사)
+
+    20008년 정도 부터 화면을 부분갱신하자
+      -> 새로운 기술 사용 ... JSON 형식
+        JSon - REST - AJAX
+        {"name":"spring", "age":20}
+        프론트와 백은 계약관계
+
+    MVC는 화면이 바뀜 REST는 안바뀜    
+    REST는 믿을수가 없다 / 확장성이 무한하다
+
+    MVC
+    urlencoded / form
+
+    REST
+    JSON / AJAX
+  -->
+</body>
+</html>

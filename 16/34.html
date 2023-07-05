@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    js, jquery.... 맛보기
+    일반 반복문
+  -->
+  <script>
+    const ar=[1,2,3];
+    const obj={
+      id:'spring',
+      pw:'1234'
+    }
+
+    //of 반복문
+    for(let i=0; i<ar.length; i++){
+      console.log(ar[i]);
+    }
+
+    //in 반복문
+    for(const a of ar){}
+    //for(const a of obj){}     //error , obj not iterable
+    //문제 있을시 뒤에 있는 코드는 실행 안됨
+    
+    console.log(obj.id);
+    console.log(obj['id']);
+
+    //필드의 이름을 변수로 작성하겠다.
+    const name = 'id';
+    console.log(obj.id);
+    console.log(obj['id']);
+
+    for(const name in obj){
+      console.log(name);            //필드명
+      console.log(obj[name]);       //값
+    }
+
+    //forEach문
+    ar.forEach((a) )
+  </script>
+</body>
+</html>

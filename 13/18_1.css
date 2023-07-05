@@ -1,0 +1,11 @@
+#page{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#top{ display: flex; justify-content: space-between; }    
+#top2 a, #bot1 a, #bot2 a {display: inline-block }        
+#bot{ display: flex; justify-content: space-between; flex-direction: column;}    
+#bot0, #bot00{ display: flex; }
+#bot00{ display: flex; justify-content: space-between;}

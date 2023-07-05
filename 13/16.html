@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 정리 3 - float</title>
+  <style>
+    #parent {background-color: greenyellow; width: 500px; overflow: hidden;}
+    /* 소스를 가져온경우 높이를 모르기 때문에 줄수 없다 => overflow 사용 */
+    #left, #right {border: 1px solid red; width: 200px;}
+    #right {float: right;}
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div id="left">우리나라 좋은나라</div>
+    <div id="right">
+      우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라
+      우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라
+      우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라
+      우리나라 좋은나라 우리나라 좋은나라 우리나라 좋은나라
+    </div>
+  </div>
+</body>
+</html>

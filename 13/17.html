@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 정리 3 - flex</title>
+  <style>
+    #parent1, #parent2, #parent3 {
+      display: flex;      
+    }
+    #parent1 div, #parent2 div, #parent3 div{
+      width: 120px;
+      background-color: aqua;
+    }
+    #parent1{justify-content: space-around;}
+    #parent2{justify-content: space-between;}
+    #parent3{justify-content: space-evenly;}
+  </style>
+</head>
+<body>
+  <div id="parent1">
+    <div>짜장</div>
+    <div>짬뽕</div>
+    <div>탕수육</div>
+  </div>
+  <div id="parent2">
+    <div>짜장</div>
+    <div>짬뽕</div>
+    <div>탕수육</div>
+  </div>
+  <div id="parent3">
+    <div>짜장</div>
+    <div>짬뽕</div>
+    <div>탕수육</div>
+  </div>
+</body>
+</html>

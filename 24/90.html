@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    $(document).ready(function(){
+      $.ajax({
+        url : 'https://sample.bmaster.krp.kr/contact/1601087500101',
+        method: 'get',
+        success:function(result){
+          const $t = $('#t');
+          $t.append(`<li><img src='${result.photo}'></li>`);
+          $t.append(`<li>${result.name}</li>`);
+          $t.append(`<li>${result.address}</li>`);
+          $t.append(`<li>${result.tel}</li>`);          
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <ul id="t"></ul>
+</body>
+</html>

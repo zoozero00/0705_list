@@ -1,0 +1,26 @@
+<!--
+  시멘틱 마크업
+  h1 ~ h6
+  <thead>, <tbody>, <tfoot>
+  <head>, <nav>, <main>, <section>, <article> 등등....
+-->
+<html>
+  <head>
+    <style>
+      /* float를 사용하면 반드시 clear */
+      main{width: 800px; overflow: hidden;}
+      aside{height: 100px;width: 100px;background-color: aqua;}
+      #main1 aside, #main1 section{
+        float: left;
+      }
+      #main1 section{width: 585px;min-height: 600px;background-color: black;}
+    </style>
+  </head>
+  <body id="main1">
+    <main>
+      <aside></aside>
+      <section></section>
+      <aside></aside>
+    </main>
+  </body>
+</html>

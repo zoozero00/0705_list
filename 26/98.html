@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function(){
+      // 1. 이벤트가 발생하면
+      $('#calc').on('click',async function(){
+        const parms = {
+          // 2. 사용자가 입력한 값을 읽는다
+          value1 : $('#value1').val(),
+          value2 : $('#value2').val()
+        }      
+      try{
+        // 3. 서버로 ajax를 보내고 awit로 결과를 수신한다
+        const result = await $.ajax({
+          url: 'http://localhost:8081/backend/rest4',
+          data: parms
+        });
+        // 4. 결과를 출력한다
+        $('#result').text(result);
+      } catch(err){
+        console.log(err);
+      }
+    })
+  })
+  </script>
+</head>
+<body>
+    <!--
+    1. 값 2개를 입력
+    2. rest api를 이용해 덧셈을 수행
+    3. 결과를 출력한다
+  -->
+  <input type="text" id="value1" placeholder="첫번째값...">
+  <input type="text" id="value2" placeholder="두번째값...">
+  <button id="calc">덧셈하기</button>
+  <p id="result"></p>
+</body>
+</html>

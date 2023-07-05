@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #light-onoff{width: 600px; border: 1px solid red;}
+    #light-onoff img {width: 600px; height: 798px;}
+    .h-center {display: flex; justify-content: center;}
+  </style>
+</head>
+<body>
+  <div id="light-onoff">
+    <div>
+      
+    </div>
+    <div class="h-center">
+      <button id="red">RED</button>
+      <button id="blue">BLUE</button>
+      <button id="yellow">yellow</button>
+    </div>
+  </div>
+  <div id="size">
+    <script>
+      
+      let index = 0;
+      const on = document.querySelector('#on');
+      const off = document.querySelector('#off');
+
+      prev.onclick=function(){
+        index--;
+        if(index<0)
+        index=2;
+        img.seAttribute('src', images[index]);
+      }
+      document.querySelector(#off).onclick=function(){
+        index++;
+        if(index<2)
+        index=0;
+        img.seAttribute('src', images[index]);
+      }
+    </script>
+  </div>
+
+</body>
+</html>

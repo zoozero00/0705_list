@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문자열을 숫자로 타입 변환</title>
+</head>
+<body>
+  <!--
+    사용자로 부터 값을 입력 받는다 : 키보드로 입력하는 값은 문자열
+    키보드로 받는 값은 항상 문자열,글자임
+
+    hmtl에서 값을 읽어오는거나 변경하는것 DOM
+    DOM작업을 해봤습니다
+    document -> 화면
+
+    받을돈은 최대한 빨리 받고 줄돈은 최대한 주지마라_허영만의 돈 부자들의 인터뷰에서...
+  -->
+
+  점수입력 : <input type="text" id="score">
+  <button onclick="print()">점수출력</button>
+  <!--<>안은 자바스크립트라 함수를 열었으면 닫아야한다-->
+  <script>
+    function print(){
+      const score = document.querySelector('#score').value;
+      console.log(typeof score);
+    //  console.log(score/2);
+      /* 이렇게 쓰면 문자열로 받아서 JS에서 타입을 변환해 계산한다 */
+      console.log(score+2);
+
+      /* 자바에서는 숫자를 문자로 바꾸는 함수는 없다 */
+      /* JS에서 숫자를 문자로 바꾸는 방법 */
+      const a=123;
+      console.log(a+"");
+
+      ddddd
+    }
+  </script>
+
+</body>
+</html>

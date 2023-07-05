@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    css의 위치
+    1. 태그         인라인스타일
+    2. head         내부 스타일
+    3. *.css        외부 스타일
+  -->
+  <style>
+    #page{
+      height: 100vh;/*vh(viewport:화면크기) 수직으로 가득 채워라*/
+      display: flex;
+      flex-direction: column; /*수직으로 만들기*/
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div id="page">
+    <div>AAA</div>
+    <div>BBB</div>
+    <div>CCC</div>
+  </div>
+</body>
+</html>

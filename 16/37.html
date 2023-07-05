@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 변수에는 기본타입 변수와 참조 변수가 있다.
+    // 기본타입 변수 : 값을 저장하고 있다
+    // 참조타입 변수 : 값을 가리키고 있다
+
+    // 기본타입과 참조타입은 동작하는 방식이 다르다
+    // 프로그램을 실행하면 ㅣ본타입 변수가 만들어지고 종료할 때까지 존재한다
+    // 객체는 필요하면 만들고 필요 없어지면 제거할 수 있다   
+    
+    // 변수가 만들어지는 영역은 stack, heap으로 구분한다
+    // stack은 프로그램을 실행하면 변수를 끝가지 유지
+    // heap은 필요할 때 필요한 만큼 사용 후 반납
+    // heap에 객체를 만든다
+    // 참조변수는 stack에 만들저져서 heap에서 사용
+    // 그래서 스택에 참조변수를 만들어 가리키게 한다.
+    
+    // Date 내장 객체
+    const a = 10;               //stack
+
+    // 이름없는 날짜 객체를 가리키는 참조변수 d -> 객체 d
+    const date = new Date();    //stack
+    console.log(d);             // 
+
+  </script>
+  
+</body>
+</html>

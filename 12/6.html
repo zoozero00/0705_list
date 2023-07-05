@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #left {width: 100px; height: 100px; background-color: yellow; float: left;}
+    #right {width: 100px; height: 100px; background-color: red; float: right;}
+    
+  </style>
+</head>
+<body>
+  <!--
+    float된 요소는 부모의 높이 계산에 반영되지 않는다
+    부모의 높이를 정상적으로 계산되게 하려면 -> float을 clear 한다
+      float 된 요소의 부모에서 overflow:hidden
+  -->
+  <h1>inline-block, float(좌우), flex, position(임의의 위치)</h1>
+  <div id="parent" style="overflow: hidden;">
+    <div id="left">A</div>
+    <div id="right">B</div>
+  </div>
+  <div style="background-color: blueviolet;">
+    우리나라 좋은나라
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function() {
+      const scorce = ('#scorce').val();
+      const result = scorce>=70? '합격' : '불합격';
+      $('#result').text(result);
+
+    });
+  </script>
+</head>
+<body>
+  <!-- 점수가 70점이상이면 합격, 아니면 불합격이라고 #result에 출력하시오 -->
+  <p id="scorce" value="75"></p>
+  <p id="result"></p>
+</body>
+</html>

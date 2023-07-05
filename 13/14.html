@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 넓이는 가지고 있는 ??으로 계산한다 -->
+  <p></p><!-- 내용이 없기 때문에 높이가 0 => 안보임 -->
+  <!--부모들의 높이는 자식들을 포함한 만큼이다-->
+  <div>
+    <ul>
+      <li>탕수육</li>
+      <li>|깐풍기</li>
+    </ul>
+  </div>
+  <div style="height: 5px;"><!-- 높이를 자식을 넘어가면 깨짐 -->
+    <ul>
+      <li>짜장</li>
+      <li>짬뽕</li>
+      <li>볶음밥</li>
+    </ul>
+  </div>
+  
+</body>
+</html>

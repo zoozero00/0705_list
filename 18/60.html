@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const ar=[75, 80, 55, 65, 90];
+
+    //70점 이상인 점수의 합계와 평균
+    let sum=0;
+    let cnt=0;
+    let avg=0;
+
+    for(const score of ar){
+      if(score>=70){
+        sum+=score;
+        cnt++;
+      }
+    }        
+    avg=sum/cnt;
+    console.log(`합계:${sum}, 평균:${avg}`);    
+
+  </script>
+</body>
+</html>

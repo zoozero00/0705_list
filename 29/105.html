@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>페이징</title>
+    <script>
+        $(document).ready(async function () {
+            const url = 'https://sample.bmaster.kro.kr/contacts'
+            const pageno = 1;
+            const pagesize = 10;
+            // ?pageno=1&pagesize=10
+            // 서버로 값을 넘길때 : 주소, 형식, 메소드
+            // urlencoded 형식 : name=홍길동&age=20
+            // get방식은 주소에 데이터를 포함해서
+            // get방식은 주소창에 urlencoded된 데이터까지 같이 넘긴다
+            // www.naver.com?name=홍길동&age=20
+            //   ㄴ> ? 로 끊어 읽는다
+            try {
+                const result = await $.ajax(`${url}?pageno=${pageno}&pagesize=${pagesize}`);
+                //console.log(result);    // 아래 3줄 뭐한거임?
+                const $tbody = $('#tbody');
+                // 변수 of 집합 : 집합의 원소들을 차례대로 변수에 담는다
+                for(const c of result.contacts){
+                  // console.log(c);    //
+                  const html=`
+                  <tr>
+                    <td>${c.no}</td>
+                    <td>${c.name}</td>
+                    <td>${c.address}</td>
+                    <td>${c.tel}</td>
+                  </tr>
+                  `;
+                  $tbody.append(html);
+                }
+                //j쿼리 
+                // $.each(result.contacts, function(idx,c){
+                //   console.log(c);
+                // })
+
+            } catch (err) {
+                console.log(err);
+            }
+
+            
+        });
+    </script>
+</head>
+
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+                <th>연락처</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+
+</html>

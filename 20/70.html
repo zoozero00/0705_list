@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn{width: 100%;};
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('.btn').on('click',function(){
+        const value = $('#value').val();
+        const result = value*value;
+        alert(result);
+      })
+
+      // 이벤트가 발생한곳 : #value
+      // 이벤트 처리할 때 사용하는 요소 : #value
+      $('#value').on('blur',function(){
+        // $('this') : 이벤트가 발생한 곳
+        const value = $('this').val();
+        const result = value*value;
+        alert(result);
+      })
+    });
+  </script>
+</head>
+<body>
+  <div class="mb-3 mt-3">
+    <label for="email" class="from-label">값:</label>
+    <input type="number" class="from-control" id="value" placeholder="값 입력..." name="value">
+    <div class="mb-3 mt-3">
+      <button type="btn" class="btn btn-outline-success">계산하기</button>
+    </div>
+  </div>
+</body>
+</html>

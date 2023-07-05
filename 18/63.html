@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    // jQuery = 자바스크립트 + 소스 -> 고유한 메소드를 제공
+    // $(선택자)
+    //this -> jQuery에서는 $(this).
+    $(document).ready(function(){
+    const a = document.querySelector('#target').innerHTML;
+    const b = $('#target').text();
+    console.log(`${a} ${b}`);
+    $('#target').text(까꿍);
+    // jQuery에서는 게터(입력)와 세터(출력)가 똑같이 생김
+    });
+  </script>
+</head>
+<body>
+  <p id="target">Hello jQuery</p>
+</body>
+</html>

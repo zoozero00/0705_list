@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    // ajax 작업을 하는데 A작업이 끝나면 B작업을 할거야
+    // 연말정산을 하는데  건강보험공단에서 보험료 정보를 읽어온 다음 국세청을
+    // 이용해 연말정산을 수행한다
+    $.ajax({
+      url:'A작업',
+      success:function(){
+        $.ajax({
+          url:'B작업',
+          success:function(){
+          $.ajax({
+            url:'C작업',
+            success:function(){
+              alert('작업 성공');
+            }
+          })
+        }
+        })      
+      }
+    });
+
+    // 콜백지옥 해결안
+    // ES6에서 try ~ catch 사용
+    // try 안에 있는 코드들을 순서대로 실행
+    try {
+      $.ajax({url:'A작업'});
+      $.ajax({url:'B작업'});
+      $.ajax({url:'C작업'});
+    } catch(err)  {
+      // try 내부에서 오류가 발생하면 catch로 옮겨간다
+      console.log(err);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

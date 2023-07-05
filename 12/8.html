@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <style>
+    /*
+      flex 의 기본축은 수평축
+      justify-content는 축과 같은 방향, align-items는 축과 반대방향
+    */
+    body {display: flex; justify-content: center;}
+    #page { width: 800px; }
+    header, nav, footer {height: 40px; display : flex; 
+      justify-content: center; align-items : center; border: 1px solid red
+    }
+    aside { width: 100px; height: 100px; float: left;
+       background-color: aqua;}
+    section{width: 600px; min-width: 600px; float: left; 
+      background-color: yellowgreen;}
+    main {overflow: hidden;}
+   </style>
+</head>
+<body>
+  <div>
+    <div id="page">
+      <header> 회사로고 </header>
+      <nav> nevigation </nav>
+      <main>
+        <aside>광고</aside>
+        <section>
+          본문
+        </section>
+        <aside>광고</aside>
+      </main>
+      <footer>꼬릿말</footer>
+    </div>
+  </div>
+</body>
+</html>

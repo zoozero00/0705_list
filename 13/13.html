@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 정리 1 - 넓이</title>
+  <style>
+    div { border:  1px solid red; width: 100px; height: 100px;}
+    #left {padding: border-box;}
+    *{ 
+      /* 
+        reset하는 방법
+        브라우저들이 디폴트 값이 있지만 초기로 돌려 재작성한다(호환성)
+       */
+      margin : 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    인라인(예_span)과 블락(예_div)이 있다
+
+    인라인 넓이가 적용되지 않는다
+    인라인의 넓이는 컨텐츠와 같다
+
+    블락요소는 넓이를 지정할수있지만 마진이 자동 적용된다
+    블락은 한줄에 하나
+
+    넓이는 인라인이든 블락이든 모양은 사각형
+    위에서 아래 좌에서 우
+    html은 요소로 구성된다
+    요소는 태그. 내용, 속성으로 구성된다
+    요소는 사각형으로 나타나는데 이것을 box model이라고 한다
+    boxmodel : margin, border, padding, content
+
+    width는 content의 넓이이다 -> content+padding+border로 넓이를 계산해라
+                                  border-box    
+  -->
+  <div id="left">
+    우리나라
+  </div>
+  <div>
+    좋은나라
+  </div>
+</body>
+</html>

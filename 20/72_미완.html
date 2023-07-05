@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #light-onoff{width: 600px; border: 1px solid red;}
+    #light-onoff img {width: 600px; height: 798px;}
+    .h-center {display: flex; justify-content: center;}
+  </style>
+</head>
+<body>
+  <!--
+    CDN : 외부 경로롤 css나 js를 가져오는것
+    CDN하는 방법
+    css: <link rel='stylesheet' herf=''>
+    js:  <script src=''></script>
+
+    js의 경우 CDN으로 가져올 때 순서가 있을수 있다
+    만약 A, B를 가져오는데 B가 A를 사용할 경우 A로부터 가져와야 한다
+    
+    $ is not defined
+  -->
+  <!-- 상대주소와 절대주소
+    image/aaa.jpg
+      현재 파일과 같은 폴더에 있는  image 폴더에서 aaa.jpg를 가져와라
+      /image/aaa.jpg
+      http://localhost:5500/image/aaa.jpg
+  -->
+  <div id="light-onoff">
+    <div>
+      <img src="../img/pic_bulbon.gif" id="img">
+    </div>
+    <div class="h-center">
+      <button id="on">ON</button>
+      <button id="off">OFF</button>
+    </div>
+  </div>
+  <div id="size">
+    <script>
+      const images = ['../img/pic_bulbon','../img/pic_bulboff'];
+      let index = 0;
+      const on = document.querySelector('#on');
+      const off = document.querySelector('#off');
+
+      prev.onclick=function(){
+        index--;
+        if(index<0)
+        index=2;
+        img.seAttribute('src', images[index]);
+      }
+      document.querySelector(#off).onclick=function(){
+        index++;
+        if(index<2)
+        index=0;
+        img.seAttribute('src', images[index]);
+      }
+    </script>
+  </div>
+
+</body>
+</html>

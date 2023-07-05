@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    //$(document).ready는 여러번 사용할수 있다
+    $(document).ready(function(){
+      //#jumsu에 타이핑을 하면 그 내용이 #target에 출력되도록 하시오
+      //사용할 함수 : keyup, vql, text
+      $('#jumsu').keyup(function(){
+        $('#target').text(($('#jumsu').val()));
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="text" id="jumsu">
+  <p id="target"></p>
+</body>
+</html>

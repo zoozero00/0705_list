@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 슬라이더</title>
+  <style>
+    #image-slider{
+      width: 600px;
+      border: 1px solid red;
+    }
+    #image-slider img{
+      width:600px;
+    }
+    .h-center{
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 자바스크립트 -->
+  <!--
+    db 설정
+
+    root-context.xml
+    serclet-context.xml - 에러 안나고 정상적으로 작동하나 ??
+  -->
+  <!-- 카멜표기법, 파스칼표기법 -->
+  <div id="image-slider">
+    <img src="C:\ZZY\DC\img\꽉.jpg">    
+  <div class="h-center">
+    <input type="button" value="이전으로">    <!-- 같은의미 -->
+    <!-- onclick=""으로 버튼 활성화 -->
+    <!-- But 비추 코드가 섞여서 -->
+    <button>다음으로</button>                 <!-- 같은의미 -->
+  </div>
+  <div>
+    <script>
+    // 요소는 태그, 속성, 내용
+    // 일반 요소는 내용을 innerHTML, input 요소는 value라고 한다
+    //JS의 DOM(사회적규약) 모델
+      const next = document.querySelector('#next');
+      console.log(next);
+      console.log(typeof next);       //object
+
+      //객채는 필드와 메소드를 가진다
+      //클래스 : 붕어빵틀, 객체 :  붕어빵
+      //객체라 관리하기 쉽다
+      next.value="다음으로 갑시다";
+      next.type="text";
+    </script>
+  </div>  
+  </div>  
+</body>
+</html>

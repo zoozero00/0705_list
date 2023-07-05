@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문</title>
+</head>
+<body>
+  <script>
+    const ar = [1,2,3,4,5];
+    
+
+    // literal : 값을 직접 적는것, 가급적 피해야함
+    for(let i=0; i<ar.length; i++){
+      console.log(ar[i]);
+    }
+    // for(:)         읽기 전용, 향상된 반복문
+    // of 반복문       읽기 전용
+    for(const a of ar){
+      a++;
+      console.log(a);
+    }
+    console.log(ar);
+  </script>
+</body>
+</html>

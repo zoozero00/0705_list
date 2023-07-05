@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function(){
+      //src에 입력할 값을 dest로 복사하자
+      //입력한 값 : input요소면 val(),아니면 text()
+    function copy(){
+      $('#dest').val($('src').val());
+    }
+  });
+    $(document).ready(function(){
+      // src에 입력한 값을 dest로 복사하자
+      // 입력한 값 : input요소면 val(). 아니면 text()
+      // callback 함수 : 작성 후 위탁해서 실행하는 함수
+      // 이벤트를 처리하는 함수는 모두 콜백
+      $('#src').on('keyup', copy);
+    });
+  </script>
+</head>
+<body>
+  <div id="app">
+    <label for="src">입력 : </label>
+    <input type="text" id="src" placeholder="입력...">
+    <label for="src">복사 : </label>
+    <input type="text" id="src" placeholder="입력을 복사..." disabled>
+    <!--
+      속성들 중에 속성이 존재하기만 하면 적용되는 놈들이 있다
+      <input type="text" readonly>
+      disabled, readonly, selected, checked
+    -->    
+  </div>
+</body>
+</html>

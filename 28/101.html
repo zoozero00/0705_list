@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>1페이지 보여주기</title>
+  <script>
+    //  list04.html
+    //  list04?pageno=4             //  location.search
+    // ? = queryString 
+    // location.search
+    
+    // id는 spring, pw는 1234를 서버로 넘기면
+    // ?id=spring%pw=1234           =,& 를 이용해 표현하는 방법(urlencoded)
+    // urlencoded 찾아보기
+    // urlencoded 된 문자열이 get 방식은 주소탕에 나타남 -> queryString
+    // queryString 찾아보기
+    
+    //  JS에서 queryString에 접근하는 방법 : location.search
+
+    // 잘못 생략했을때 1페이지를 보여주는 방법
+    //  const queryString = new URLSearchParams(location.search);
+    //  const pageno = queryString.get('pageno');
+    //  if(pageno===null)
+    //   pageno=1;
+    
+    // 위 4줄은 $(document).ready() 내부에 없어도 된다
+    $(document).ready(async function(){
+      //const api = 'http://sample.bmaster.kro.kr/comtacts'
+      //const url = `${api}?pageno=${pageno}&pagesize=10`;
+
+      try{
+        const url='https://sample.bmaster.kro.kr/contacts?pageno=3&pagesize=10';
+        const result = await $.ajax(url);
+        const tbody = $('#tbody');
+        for(const c of result.contacts){
+          const html = `
+          <tr>
+            <td>${c.no}</td>
+            <td>
+              <a href = "read.html?no=${c.no}">${c.name}</a> 
+            </td>
+            <td>${c.address}</td>
+            <td>${c.tel}</td>
+          `;
+          tbody.append(html);
+        }
+      } catch(err){
+        console.log(err);
+      }
+    })
+    
+  </script>
+</head>
+<body>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>주소</th>
+        <th>연락처</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+  </table>
+</body>
+</html>

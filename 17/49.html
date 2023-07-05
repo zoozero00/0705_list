@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docoument</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    #image-slider{ width: 600px; border: 1px solid red; }    
+    #image-slider img{ width:600px; height: 798px;}    
+    .h-center{ display: flex; justify-content: center; }
+    #image-slider div:first-of-type {height: 800px;}
+  </style>
+</head>
+<body>
+  <div id="image-slider">
+      <div>
+        <img src="../img/뚱쿠키.jpeg" id="img">    
+      </div>      
+      <div class="h-center">    
+        <button id="prev">이전으로</button>
+        <button id="next">다음으로</button>
+      </div>
+  </div>
+  <div id="size">
+    <script>
+      //내가 작성한 다음 실행은 js에 맡긴다 -> callback 함수
+      const images = ['../img/뚱쿠키.jpeg','../img/씬쿠키.jpeg','../img/기둥쿠키.jpeg','../img/훗냥이.jpeg'];
+      let index = 0;
+      const prev = document.querySelector('#prev');
+      const imge = document.querySelector('#img');
+    
+      prev.onclick=function(){
+        index--;
+        if(index<0)
+          index=3;
+        img.setAttribute('src',images[index]);
+      } 
+      document.querySelector('#next').onclick=function(){    
+        index++;
+        if(index>3)
+          index=0;
+        img.setAttribute('src',images[index]);
+      } 
+      </script>
+  </div>  
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //10번째줄의 익명함수는 이벤트가 발생하면 처리하는 함수 : 이벤트 handler
+    $(document),ready(function(){
+      $('#btn').click(function(){
+        const scorce= $('#score').val();
+        const result = scorce>=70? '합격:불합격';
+        $(#result).text(result);
+      })
+    })
+  </script>
+</head>
+<body>
+  <label for="scorce">점수 : </label>
+  <input type="number" id="scorce" placeholder="점수 입력...">
+  <button id="btn">결과 출력</button>
+  <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function(){
+      $('#check').click(function(){
+        const score = $('#score').val();
+        if(score>=70)
+        $('#result').text('합격').css('color', 'blue');
+        else
+        $('#result').text('불합격').css('color', 'red');
+      });
+    })
+  </script>
+</head>
+<body>
+    <!--
+    점수를 입력하고 확인 버튼을 클릭하면 70점 이상 합격, 아니면 불합격이라고
+    #result에 출력하시오
+  -->  
+  <input type="number" id="score">
+  <button id="check">확인</button>
+  <p id="result"></p>  
+</body>
+</html>

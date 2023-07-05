@@ -1,0 +1,4 @@
+/*
+외부 CSS : css를 만들 권한이 없거나 css는 공통되게 통일 해야해서
+*/
+div { border: 1px solid red;}

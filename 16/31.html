@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="myForm">
+    이름:<input type="text" value="spring" name="irum"><br>
+    비밀번호:<input type="password" value="1234" name="pwd"><br>
+  </form>
+  <script>
+    // 서버로 전달하는 형식 : urlencoded
+    // ?이름=값&이름=값
+    // ?irum=spring&pwd=1234
+
+    const frm = {
+      irum:"spring",
+      pwd:"1234"
+    };
+
+    // js객체를 서버로 넘기는 형식 : JSON
+    // JSON 정보를 수,발신 가능
+    console.log(JSON.stringify(frm));
+
+    //415 형식이 안맞았다
+  </script>
+</body>
+</html>

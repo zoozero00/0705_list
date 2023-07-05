@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const ar=[75, 80, 55, 65, 90];
+    /* 배열에서 70점 이상인 사람들의 인원수를 출력 */
+    let cnt=0; //변수 설정
+    for(const score of ar){
+      if(score>=70){
+        cnt++;
+      }
+    }
+    console.log(`70점이상의 인원수 : ${cnt}`);
+    // 70점 이상이 3명 이상이라면 합격자다수, 미만이라면 합격자 소수라고 출력
+    console.log(`${cnt>=3?'합격자다수':'합격자소수'}`);    
+
+  </script>
+</body>
+</html>

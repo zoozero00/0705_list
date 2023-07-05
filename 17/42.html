@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+      선택자
+      id : 이름
+      class : 종류
+    */
+    #standard li{
+      font-weight: bold;
+      font-style: italic;
+      font-size: 1.25em;
+      font-family: 'Courier New', Courier, monospace;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="standard">
+  <h1>스타일의 위치</h1>
+    <ul>      
+      <li style="color: red;">inline 스타일 : 요소에 직접 작성 - 우선순위가 inline의 열배의 차이</li>
+        <!--이름 붙이기가 어려워 inline 로 직접 정한다-->
+      <li>내부 스타일 : header 의 style 요소에 작성</li>
+      <li>외부 스타일 : link로 html 밖에 있는 css파일을 읽어온다</li>
+    </ul>
+  </div>
+</body>
+</html>

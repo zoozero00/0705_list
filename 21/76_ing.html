@@ -1,0 +1,64 @@
+<!--
+  - 색을 선택하면 색이 바뀌고 색의 이름을 출력하는데
+  - 이름을 영어가 아닌 한글로 나오게 하시오
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    #canvas1 {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+    }
+    #canvas2 {
+      height: 100px;
+      line-height: 100px;
+      text-align: center;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+      $('#color1').on('change', function() {         
+        const color = $('#color1 option:selected').val();     
+        const text = $('#color1 option:selected').text();
+        $('#canvas1').css('background-color', color).text(text);
+      });
+      $('#color2').on('change',function(){        
+        const color = ['orange', 'green', 'puple'];
+        const name = ['주황', '초록', '보라'];
+        $('#canvas2').css('background-color', color[index]).text(name[index]);
+      });
+    });
+  </script>
+</head>
+<body>
+  <!--
+    나는 스마트폰을 사용한다 -> 나는 스마트폰에 의존(dependency)하다
+    부트스트랩 3와 4는 jQuery에 의존한다
+  -->
+  <div id="app">
+      <div id="canvas1"></div>
+      <div id="canvas2"></div>
+      <div id="color1">
+        <select>
+          <option disabled selected>색을 선택하세요</option>
+          <option value="red">빨강</option>
+          <option value="orange">주황</option>
+          <option value="yellow">노랑</option>        
+        </select>
+      </div>  
+      <div id="color2">
+        <option disabled selected>색을 선택하세요</option>
+        <option value="green">초록</option>
+        <option value="blue">파랑</option>              
+        <option value="puple">보라</option>       
+      </div>
+    </div>
+  </div> 
+</body>
+</html>
