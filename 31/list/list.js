@@ -1,72 +1,36 @@
-function getPageno() {
-  const param = new URLSearchParams(location.search).get('pageno');
-  const pageno = parseInt(param);
+// http://localhost:5500/contacts?pageno=? 가져올꺼임
+function getPageno(){
+  // get 방식의 querystring을 읽을수 있는 객체 생성
+  const param = new URLSearchParams(location.search);
+  const pageno = parseInt(param.get('pageno'));
+
+  // pageno가 없거나 숫자로 바꿀수 없는 값인 경우 parseInt의 결과는 NaN
+  // : Not a Number
+  // NaN를 비교하면 무조건 false(JS에서 NaN는 비교되는 값이 아니다)
+  // NaN와 비교할 때는 isNaN() 함수를 사용해야 한다
+  // NaN에도 null 포함됨
   if(isNaN(pageno))
     return 1;
   else if(pageno<1)
     return 1;
-  else 
-    return pageno;
+  return pageno;  
 }
 
-async function fetch(pageno, pagesize=10) {
-  try {
-    return await $.ajax(`http://sample.bmaster.kro.kr/contacts?pageno=${pageno}&pagesize=${pagesize}`);
-  } catch(err) {
-    console.log(err);
-    return null;
-  }
-}
-
-function getPagination({pageno, pagesize, totalcount, blockSize=5}) {
-  const countOfPage = Math.ceil(totalcount/pagesize);
-  const prev = Math.floor((pageno-1)/blockSize)*blockSize;
-  const start = prev+1;
-  let end = prev + blockSize;
-  let next = end + 1;
-  if(end>=countOfPage) {
-    end = countOfPage;
-    next = 0;
-  }
-  console.log({prev, start, end, next, pageno})
-  return {prev, start, end, next, pageno};
-}
-
-function printContacts(contacts, $parent) {
-  for(c of contacts) {
-    const html = `
-      <tr>
-        <td>${c.no}</td>
-        <td><a href='read.html?no=${c.no}'>${c.name}</a></td>
-        <td>${c.tel}</td>
-        <td>${c.address}</td>
-      </tr>
-    `;
-    $parent.append(html);
-  }
-}
-
-function printPagination({prev, start, end, next}, pageno, $parent) {
-  if(prev>0) {
-    const html =`
-      <li class='page-item'>
-        <a class='page-link' href='list.html?pageno=${prev}'>이전으로</a>
-      </li>`;
-    $parent.append(html);
-  }
-  for(let i=start; i<=end; i++) {
-    const className = pageno===i? 'page-item active' : 'page-item';
-    const html =`
-      <li class='${className}'>
-        <a class='page-link' href='list.html?pageno=${i}'>${i}</a>
-      </li>`;
-    $parent.append(html);  
-  }
-  if(next>0) {
-    const html =`
-      <li class='page-item'>
-        <a class='page-link' href='list.html?pageno=${next}'>다음으로</a>
-      </li>`;
-    $parent.append(html);
-  }
+// 기본 매개변수(default parameter)
+async function fetch(pageno=1, pagesize=10){
+  const api = 'http://sample.bmaster.kro.kr/contacts';
+  const url = `${api}?pageno=${pageno}&pagesize=${pagesize}`;
+    // $.ajax()는 병렬 처리(비동기 처리)되는 코드 -> 언제 끝날 지 모른다
+    // 비동기 코드를 리턴 받는 result는 "미래에 값이 들어올 것이다"란 값을 가진다
+    // (Promios)
+    try{
+      // const result = await $.ajax(url);
+      // 값이 없을수 있으므로
+      return await $.ajax(url);
+    }catch(err){
+      console.log(err);
+      return null;      
+    }
+    
+    
 }
